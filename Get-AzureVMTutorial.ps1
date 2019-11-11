@@ -32,7 +32,7 @@ workflow Get-AzureVMTutorial
 
     #Print out up to 10 of those VMs
     if(!$VMs) {
-        Write-Output "No VMs were found in your subscription."
+        Write-Output "No VMs were found in your subscription, cuz you don't have any."
     } else {
         Write-Output $VMs[0..9]
     }
