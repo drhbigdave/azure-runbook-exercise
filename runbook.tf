@@ -28,7 +28,7 @@ resource "azurerm_automation_runbook" "example" {
   runbook_type        = "PowerShell"
 
   publish_content_link {
-    uri = "https://raw.githubusercontent.com/drhbigdave/azure-runbook-exercise/master/Get-AzureVMTutorial.ps1"
+    uri = "https://raw.githubusercontent.com/drhbigdave/azure-runbook-exercise/master/Get-AzureVMTutorialv001.ps1"
   }
 
 }
