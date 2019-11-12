@@ -7,14 +7,16 @@
         AUTHOR: Azure Automation Team
         LASTEDIT: Mar 27, 2015
 #>
+Write-Output "hello world"
 Write-Output "this is a mod to test source control sync"
+
 workflow Get-AzureVMTutorial
 {
     #The name of the Automation Credential Asset this runbook will use to authenticate to Azure.
     $CredentialAssetName = 'DefaultAzureCredential'
 
     #Get the credential with the above name from the Automation Asset store
-    $Cred = Get-AutomationPSCredential -Name $CredentialAssetName
+    $Cred = Get-AzureRMAutomationCredential -Name $CredentialAssetName
     if(!$Cred) {
         Throw "Could not find an Automation Credential Asset named '${CredentialAssetName}'. Make sure you have created one in this Automation Account."
     }
@@ -33,7 +35,7 @@ workflow Get-AzureVMTutorial
 
     #Print out up to 10 of those VMs
     if(!$VMs) {
-        Write-Output "No VMs were found in your subscription."
+        Write-Output "No VMs were found in your subscription, simple mod for testing."
     } else {
         Write-Output $VMs[0..9]
     }
